@@ -1,0 +1,24 @@
+:root {
+  /* Colors */
+  --primary-color: #1c1c1c;
+  --accent-color: #c8a97e;
+  --background-color: #f8f5f0;
+  --text-color: #333;
+  --text-light: #666;
+  --white: #ffffff;
+  --light-gray: #e0e0e0;
+  
+  /* Fonts */
+  --font-heading: 'Georgia', 'Times New Roman', serif;
+  --font-body: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  
+  /* Spacing */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 2rem;
+  --spacing-lg: 3.75rem; /* 60px */
+  --spacing-xl: 5rem; /* 80px */
+  
+  /* Transitions */
+  --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}

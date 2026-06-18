@@ -1,0 +1,54 @@
+.about-hero {
+  background-image: url("https://picsum.photos/seed/about-hero/1920/800");
+}
+
+.story-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-lg);
+  align-items: center;
+}
+
+.mv-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-lg);
+}
+
+.mv-card {
+  background-color: var(--white);
+  padding: 3rem;
+  text-align: left;
+  transition: ease 0.3s;
+  border-radius: 10px;
+}
+.mv-card:hover {
+  scale: 1.05;
+  box-shadow: 5px 5px #c8a97e29;
+}
+.mv-card h3 {
+  color: #c8a97e;
+  font-size: 1.5rem;
+  /* text-decoration: underline; */
+  border-bottom: 1px solid #c8a97e;
+  margin-bottom: 1rem;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-md);
+}
+
+@media (max-width: 992px) {
+  .story-grid,
+  .mv-grid,
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .team-card {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+}

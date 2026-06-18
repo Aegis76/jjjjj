@@ -1,0 +1,374 @@
+.home-page {
+  /* Padding handled globally in main */
+}
+
+/* Hero Slider as Grid Layout */
+.hero {
+  height: calc(100vh - 170px);
+  min-height: 500px;
+  overflow: hidden;
+  padding: 0;
+  position: relative;
+}
+
+.hero-slide {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  height: 100%;
+  background: none !important;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  position: absolute;
+  width: 100%;
+}
+
+.hero-slide.active {
+  opacity: 1;
+  position: relative;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+  padding: 0 40px;
+}
+
+.hero-content span {
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 6px;
+  color: var(--accent-color);
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.hero-content h1 {
+  font-size: 4.5rem;
+  margin-bottom: 30px;
+  color: var(--primary-color);
+  line-height: 1.1;
+}
+
+.hero-content p {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--text-light);
+  margin-bottom: 40px;
+  max-width: 500px;
+}
+
+.action-row {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* Visual Display - Right Side of Slide */
+.hero-slide::after {
+  content: "";
+  background-size: cover;
+  background-position: center;
+  border-radius: 4px;
+  margin: 40px 40px 40px 0;
+  box-shadow: 30px 30px 0px rgba(200, 169, 126, 0.1);
+}
+
+.hero-slide:nth-child(1)::after {
+  background-image: url("/Images/nainital.jpg");
+}
+.hero-slide:nth-child(2)::after {
+  background-image: url("/Images/forest2.jpg");
+}
+.hero-slide:nth-child(3)::after {
+  background-image: url("/Images/forest3.jpg");
+}
+
+/* Featured Visual Detail Card on the Slide */
+.hero-visual-card {
+  position: absolute;
+  bottom: 80px;
+  right: 120px;
+  width: 380px;
+  background: white;
+  padding: 30px;
+  border-left: 4px solid var(--accent-color);
+  z-index: 5;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.hero-visual-card h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.hero-visual-card p {
+  font-size: 13px;
+  color: var(--text-light);
+  margin-bottom: 15px;
+}
+
+/* Slider Controls */
+.slider-btn {
+  background: rgba(255, 255, 255, 0.8);
+  color: var(--primary-color);
+  border: none;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  transition: var(--transition-smooth);
+}
+
+.slider-btn:hover {
+  background: var(--accent-color);
+  color: white;
+}
+
+.slider-btn.prev {
+  left: 20px;
+}
+
+.slider-btn.next {
+  right: 20px;
+}
+
+.slider-dots {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  display: flex;
+  gap: 1rem;
+}
+
+.slider-dots .dot {
+  width: 10px;
+  height: 10px;
+  border: 1px solid var(--white);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.slider-dots .dot.active {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+}
+
+/* Editorial Elements */
+.location-marker {
+  font-size: 11px;
+  color: var(--text-light);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 20px 40px;
+  background-color: var(--background-color);
+}
+
+.location-marker .dot {
+  width: 8px;
+  height: 8px;
+  background: var(--accent-color);
+  border-radius: 50%;
+}
+
+.info-bar {
+  background: var(--primary-color);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 20px 40px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.info-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 150px;
+}
+
+.info-label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--accent-color);
+  margin-bottom: 5px;
+}
+
+.info-value {
+  font-family: var(--font-heading);
+  font-size: 14px;
+}
+
+/* Sections */
+.intro-grid,
+.why-us-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-lg);
+  align-items: center;
+}
+
+.intro-image img,
+.why-us-image img {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.intro-image img {
+  height: 600px;
+  box-shadow: 20px -20px 0 -5px var(--accent-color);
+}
+
+.rooms-grid,
+.activities-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-md);
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--spacing-md);
+}
+
+.service-card {
+  background-color: var(--white);
+  padding: 2.5rem;
+  text-align: center;
+  transition: var(--transition-smooth);
+}
+
+/* CTA */
+.cta-banner {
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url("https://picsum.photos/seed/cta-bg/1920/600");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: var(--white);
+  text-align: center;
+}
+
+.cta-content h2 {
+  color: var(--white);
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 1200px) {
+  .hero-content h1 {
+    font-size: 3.5rem;
+  }
+
+  .hero-visual-card {
+    right: 40px;
+    width: 320px;
+  }
+}
+
+@media (max-width: 992px) {
+  .hero {
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .hero-slide {
+    grid-template-columns: 1fr;
+    position: relative;
+    opacity: 1;
+    display: none;
+  }
+
+  .hero-slide.active {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hero-content {
+    order: 1;
+    padding: 60px 40px;
+    text-align: center;
+    align-items: center;
+  }
+
+  .hero-slide::after {
+    order: 2;
+    margin: 0 40px 40px;
+    height: 400px;
+    width: auto;
+  }
+
+  .hero-visual-card {
+    position: relative;
+    bottom: 0;
+    right: 0;
+    width: auto;
+    margin: 0 40px 60px;
+  }
+
+  .intro-grid,
+  .why-us-grid,
+  .rooms-grid,
+  .activities-grid,
+  .services-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .service-card {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .home-page {
+    padding-top: 70px;
+  }
+
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .intro-grid,
+  .why-us-grid,
+  .rooms-grid,
+  .activities-grid,
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .info-bar {
+    justify-content: center;
+  }
+
+  .info-item {
+    min-width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .cta-content h2 {
+    font-size: 2rem;
+  }
+
+  .slider-btn {
+    display: none;
+  }
+}
